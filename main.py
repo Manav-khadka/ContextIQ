@@ -22,4 +22,4 @@ def send_chat(body: ChatBody):
     # generate the response using LLM
     search_results = search_service.web_search(body.query)
     sorted_query = sort_source_service.sort_sources(body.query, search_results)
-    return {"chat_response": {"query": body.query, "length":len(search_results), "search_results": search_results, "sorted_query": sorted_query}}
+    return {"chat_response": "hi"}
