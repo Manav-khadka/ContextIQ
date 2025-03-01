@@ -9,6 +9,7 @@ class SearchService:
         results = []
         response = tavily_client.search(query, max_results=5)
         search_results = response.get("results", [])
+        print(search_results)
         for result in search_results:
             url = result.get("url")
             if url:
@@ -18,7 +19,7 @@ class SearchService:
                     {
                         "title": result.get("title"),
                         "url": url,
-                        "content": content
+                        "content": content  
                     }
                 )
             
